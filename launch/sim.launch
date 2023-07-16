@@ -30,7 +30,7 @@
 		args="-database sps_2647 -sdf -model sps_2647 -x -50.0 -y 50.0"/>
 
 	<!-- Robot -->
-    <param name="robot_description" command="cat '$(find sps)/urdf/model.urdf'" />
+    <param name="robot_description" command="cat '$(find sps)/urdf/mira.urdf'" />
 
 	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
 		args="-urdf -model mira -param robot_description
