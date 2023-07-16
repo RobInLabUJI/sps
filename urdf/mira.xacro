@@ -2,7 +2,6 @@
 
 	<xacro:include filename="$(find sps)/urdf/mobile_base.xacro"/>
 	<xacro:include filename="$(find sps)/urdf/kinova.xacro"/>
-	<xacro:include filename="$(find sps)/urdf/_d435.gazebo.xacro"/>
 	
 	<link name="base_link"></link>
 	<joint name="basejoining" type="fixed">
