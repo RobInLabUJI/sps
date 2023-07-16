@@ -1,0 +1,135 @@
+<robot name="mobile_base" xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+
+    <xacro:include filename="$(find sps)/urdf/mobile_base_macro.xacro" />
+
+	<link name="${prefix}_base_link"></link>
+	
+	<joint name="${prefix}_base_link_to_base" type="fixed">
+		<parent link="${prefix}_base_link"/>
+		<child link="${prefix}_chassis"/>
+		<origin rpy="${PI/2} 0 0" xyz="0 0 0"/>
+	</joint>
+	
+	<link name="${prefix}_chassis">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 -0 0" />
+			<geometry>
+				<mesh filename="package://sps/urdf/mobile_base_models/chassis.stl"/>
+			</geometry>
+			<material name="chassis_material">
+				<color rgba="0.74902 0.74902 0.74902 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<geometry>
+				<mesh filename="package://sps/urdf/mobile_base_models/chassis.stl"/>
+			</geometry>
+		</collision>
+		<inertial>
+			<origin xyz="3.03885e-10 0.0866061 -4.21983e-12" rpy="0 0 0"/>
+			<mass value="22" />
+			<inertia ixx="0.254" ixy="-1.648e-9"  ixz="-2.434e-08" iyy="0.656" iyz="3.684e-10" izz="0.532" />
+		</inertial>
+	</link>
+	
+	<gazebo reference="${prefix}_chassis">
+		<material>Gazebo/DarkGrey</material>
+	</gazebo>
+
+
+	<xacro:joint_mecanum id="front_dx" x="0.183" z="0.1355"/>
+	<xacro:link_mecanum id="front_dx" mirror="true" />
+
+	<xacro:joint_mecanum id="front_sx" x="0.183" z="-0.1355"/>
+	<xacro:link_mecanum id="front_sx" mirror="false" />
+
+	<xacro:joint_mecanum id="rear_sx" x="-0.183" z="-0.1355"/>
+	<xacro:link_mecanum id="rear_sx" mirror="true" />
+
+	<xacro:joint_mecanum id="rear_dx" x="-0.183" z="0.1355"/>
+	<xacro:link_mecanum id="rear_dx" mirror="false" />
+
+	<joint name="${prefix}_camera_joint" type="fixed">
+	  <origin xyz="0.285 0 0.075" rpy="${PI/2} 0 ${PI/2}"/>
+	  <parent link="${prefix}_base_link"/>
+          <child link="${prefix}_camera_rgb_frame"/>
+	</joint>
+
+
+	
+	<link name="${prefix}_camera_rgb_frame">
+		<visual name="visual">
+                 <pose>0 0 0.27 0 0 0</pose>
+                 <geometry>
+                   <mesh filename="package://realsense2_description/meshes/d435.dae"/>
+                 </geometry>
+               </visual>
+		
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.062" radius="0.03" />
+			</geometry>
+		</collision>
+	</link>
+	
+	<gazebo reference="${prefix}_camera_rgb_frame">
+		<material>Gazebo/Orange</material>
+	</gazebo>
+	
+	<joint name="${prefix}_lidar_joint" type="fixed">
+	  <origin xyz = "0.285 0 0.12" rpy = "${PI/2} 0 ${PI/2}"/>
+	  <parent link="${prefix}_base_link"/>
+          <child link="${prefix}_lidar_frame"/>
+	</joint>
+	
+	<link name="${prefix}_lidar_frame">
+		<visual name="visual">
+                 <pose>0 0 0.27 0 0 0</pose>
+                 <geometry>
+                   <mesh filename="package://realsense_lidar/meshes/l515.dae"/>
+                 </geometry>
+               </visual>
+		
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.062" radius="0.03" />
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="${prefix}_lidar_frame">
+		<material>Gazebo/Orange</material>
+	</gazebo>
+	
+	<joint name="${prefix}_2d_lidar_joint" type="fixed">
+	  <origin xyz = "0.18 0 0.17" rpy = "${PI/2} 0 ${PI/2}"/>
+	  <parent link="${prefix}_base_link"/>
+          <child link="${prefix}_2d_lidar_frame"/>
+	</joint>
+	
+	<link name="${prefix}_2d_lidar_frame">
+		<visual name="visual">
+                 <pose>0 0 0.27 0 0 0</pose>
+                 <geometry>
+                   <mesh filename="package://turtlebot_explorer/meshes/rplidar.dae" scale="0.001 0.001 0.001"/>
+                 </geometry>
+               </visual>
+		
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0"/>
+			<geometry>
+				<cylinder length="0.062" radius="0.03" />
+			</geometry>
+		</collision>
+	</link>
+	<gazebo reference="${prefix}_2d_lidar_frame">
+		<material>Gazebo/Orange</material>
+	</gazebo>
+
+	<xacro:include filename="$(find sps)/urdf/mobile_base_plugin.xacro" />
+	
+
+</robot>

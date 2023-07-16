@@ -1,0 +1,18 @@
+<robot name="mira" xmlns:xacro="http://ros.org/wiki/xacro">
+
+	<xacro:include filename="$(find sps)/urdf/mobile_base.xacro"/>
+	<xacro:include filename="$(find sps)/urdf/kinova.xacro"/>
+	<xacro:include filename="$(find sps)/urdf/_d435.gazebo.xacro"/>
+	
+	<link name="base_link"></link>
+	<joint name="basejoining" type="fixed">
+			<parent link="base_link" />
+			<child link="mobile_base_base_link"/>
+			<origin rpy="0 0 0" xyz="0 0 0"/>
+	</joint>
+	<joint name="joining" type="fixed">
+			<parent link="mobile_base_chassis" />
+			<child link="kinova_base_link"/>
+			<origin rpy="-0.331613 -1.57 0" xyz="0.021 0.037667 0"/>
+	</joint>
+</robot>

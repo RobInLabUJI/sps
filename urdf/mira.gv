@@ -1,0 +1,56 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"mobile_base_base_link" [label="mobile_base_base_link"];
+"mobile_base_2d_lidar_frame" [label="mobile_base_2d_lidar_frame"];
+"mobile_base_chassis" [label="mobile_base_chassis"];
+"kinova_base_link" [label="kinova_base_link"];
+"kinova_link0" [label="kinova_link0"];
+"kinova_link1" [label="kinova_link1"];
+"kinova_link2" [label="kinova_link2"];
+"kinova_link3" [label="kinova_link3"];
+"kinova_link4" [label="kinova_link4"];
+"kinova_link5" [label="kinova_link5"];
+"kinova_link6" [label="kinova_link6"];
+"mobile_base_omniwheel_front_dx" [label="mobile_base_omniwheel_front_dx"];
+"mobile_base_omniwheel_front_sx" [label="mobile_base_omniwheel_front_sx"];
+"mobile_base_omniwheel_rear_dx" [label="mobile_base_omniwheel_rear_dx"];
+"mobile_base_omniwheel_rear_sx" [label="mobile_base_omniwheel_rear_sx"];
+"mobile_base_camera_rgb_frame" [label="mobile_base_camera_rgb_frame"];
+"mobile_base_lidar_frame" [label="mobile_base_lidar_frame"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "basejoining" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"basejoining" -> "mobile_base_base_link"
+"mobile_base_base_link" -> "mobile_base_2d_lidar_joint" [label="xyz: 0.18 0 0.17 \nrpy: 1.5708 -0 1.5708"]
+"mobile_base_2d_lidar_joint" -> "mobile_base_2d_lidar_frame"
+"mobile_base_base_link" -> "mobile_base_base_link_to_base" [label="xyz: 0 0 0 \nrpy: 1.5708 -0 0"]
+"mobile_base_base_link_to_base" -> "mobile_base_chassis"
+"mobile_base_chassis" -> "joining" [label="xyz: 0.021 0.037667 0 \nrpy: 0 -1.5708 -0.331872"]
+"joining" -> "kinova_base_link"
+"kinova_base_link" -> "kinova_base_link_to_base" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"kinova_base_link_to_base" -> "kinova_link0"
+"kinova_link0" -> "kinova_joint1" [label="xyz: 0 0 0.1565 \nrpy: 0 -0 0"]
+"kinova_joint1" -> "kinova_link1"
+"kinova_link1" -> "kinova_joint2" [label="xyz: 0 0.0015 0.1185 \nrpy: 0 -1.5708 0"]
+"kinova_joint2" -> "kinova_link2"
+"kinova_link2" -> "kinova_joint3" [label="xyz: 0.41 0 0 \nrpy: 0 -0 0"]
+"kinova_joint3" -> "kinova_link3"
+"kinova_link3" -> "kinova_joint4" [label="xyz: 0.207 0 -0.01125 \nrpy: 0 1.5708 -0"]
+"kinova_joint4" -> "kinova_link4"
+"kinova_link4" -> "kinova_joint5" [label="xyz: -0.0025 0 0.0965 \nrpy: 0 -1.5708 -1.5708"]
+"kinova_joint5" -> "kinova_link5"
+"kinova_link5" -> "kinova_joint6" [label="xyz: 0.101 0 0.00025 \nrpy: 1.5708 -0 1.5708"]
+"kinova_joint6" -> "kinova_link6"
+"mobile_base_chassis" -> "mobile_base_joint_front_dx" [label="xyz: 0.183 0.06 0.1355 \nrpy: 0 -0 0"]
+"mobile_base_joint_front_dx" -> "mobile_base_omniwheel_front_dx"
+"mobile_base_chassis" -> "mobile_base_joint_front_sx" [label="xyz: 0.183 0.06 -0.1355 \nrpy: 0 -0 0"]
+"mobile_base_joint_front_sx" -> "mobile_base_omniwheel_front_sx"
+"mobile_base_chassis" -> "mobile_base_joint_rear_dx" [label="xyz: -0.183 0.06 0.1355 \nrpy: 0 -0 0"]
+"mobile_base_joint_rear_dx" -> "mobile_base_omniwheel_rear_dx"
+"mobile_base_chassis" -> "mobile_base_joint_rear_sx" [label="xyz: -0.183 0.06 -0.1355 \nrpy: 0 -0 0"]
+"mobile_base_joint_rear_sx" -> "mobile_base_omniwheel_rear_sx"
+"mobile_base_base_link" -> "mobile_base_camera_joint" [label="xyz: 0.285 0 0.075 \nrpy: 1.5708 -0 1.5708"]
+"mobile_base_camera_joint" -> "mobile_base_camera_rgb_frame"
+"mobile_base_base_link" -> "mobile_base_lidar_joint" [label="xyz: 0.285 0 0.12 \nrpy: 1.5708 -0 1.5708"]
+"mobile_base_lidar_joint" -> "mobile_base_lidar_frame"
+}

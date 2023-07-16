@@ -1,0 +1,129 @@
+<robot name="mobile_base" xmlns:xacro="http://ros.org/wiki/xacro">
+
+	
+	<gazebo>
+		<plugin name="robot_controller" filename="libgazebo_ros_planar_move.so">
+			<commandTopic>cmd_vel</commandTopic>
+			<odometryTopic>odom</odometryTopic>
+			<odometryFrame>odom</odometryFrame>
+			<odometryRate>20.0</odometryRate>
+			<robotBaseFrame>base_link</robotBaseFrame>
+		</plugin>
+	</gazebo>
+	
+	<gazebo reference="${prefix}_camera_rgb_frame">
+		<sensor type="camera" name="camera">
+			<update_rate>30.0</update_rate>
+			<camera name="head">
+				<horizontal_fov>1.97222</horizontal_fov>
+				<image>
+					<width>1920</width>
+					<height>1080</height>
+					<format>R8G8B8</format>
+				</image>
+				<clip>
+					<near>0.02</near>
+					<far>100</far>
+				</clip>
+				<noise>
+					<type>gaussian</type>
+					<mean>0.0</mean>
+					<stddev>0.007</stddev>
+				</noise>
+			</camera>
+			<plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+				<alwaysOn>true</alwaysOn>
+				<updateRate>0.0</updateRate>
+				<cameraName>${prefix}_camera</cameraName>
+				<imageTopicName>${prefix}_image_raw</imageTopicName>
+				<cameraInfoTopicName>${prefix}_camera_info</cameraInfoTopicName>
+				<frameName>${prefix}_camera_rgb_optical_frame</frameName>
+				<hackBaseline>0.07</hackBaseline>
+				<distortionK1>-0.35925741</distortionK1>
+				<distortionK2>0.16575977</distortionK2>
+				<distortionK3>-0.03662964</distortionK3>
+				<distortionT1>0.00264587</distortionT1>
+				<distortionT2>0.00037099</distortionT2>
+			</plugin>
+		</sensor>
+	</gazebo>	
+	
+	
+	<!-- Bumpers -->
+	
+	<gazebo reference="${prefix}_chassis">
+		<sensor name="${prefix}_chassis_bumper" type="contact">
+			<alwaysOn>true</alwaysOn>
+			<updateRate>30.0</updateRate>
+			<contact>
+				<collision>base_link_fixed_joint_lump__${prefix}_chassis_collision</collision>
+			</contact>
+			<plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+				<bumperTopicName>bumper</bumperTopicName>
+				<frameName>world</frameName>
+				<updateRate>30.0</updateRate>
+			</plugin>
+		</sensor>
+	</gazebo>	
+	
+	<gazebo reference="${prefix}_omniwheel_front_dx">
+		<sensor name="${prefix}_omniwheel_front_dx_collision_bumper" type="contact">
+			<alwaysOn>true</alwaysOn>
+			<updateRate>30.0</updateRate>
+			<contact>
+				<collision>${prefix}_omniwheel_front_dx_collision</collision>
+			</contact>
+			<plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+				<bumperTopicName>bumper</bumperTopicName>
+				<frameName>world</frameName>
+				<updateRate>30.0</updateRate>
+			</plugin>
+		</sensor>
+	</gazebo>		
+	
+	<gazebo reference="${prefix}_omniwheel_front_sx">
+		<sensor name="${prefix}_omniwheel_front_sx_collision_bumper" type="contact">
+			<alwaysOn>true</alwaysOn>
+			<updateRate>30.0</updateRate>
+			<contact>
+				<collision>${prefix}_omniwheel_front_sx_collision</collision>
+			</contact>
+			<plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+				<bumperTopicName>bumper</bumperTopicName>
+				<frameName>world</frameName>
+				<updateRate>30.0</updateRate>
+			</plugin>
+		</sensor>
+	</gazebo>		
+	
+	<gazebo reference="${prefix}_omniwheel_rear_dx">
+		<sensor name="${prefix}_omniwheel_rear_dx_collision_bumper" type="contact">
+			<alwaysOn>true</alwaysOn>
+			<updateRate>30.0</updateRate>
+			<contact>
+				<collision>${prefix}_omniwheel_rear_dx_collision</collision>
+			</contact>
+			<plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+				<bumperTopicName>bumper</bumperTopicName>
+				<frameName>world</frameName>
+				<updateRate>30.0</updateRate>
+			</plugin>
+		</sensor>
+	</gazebo>	
+	
+	<gazebo reference="${prefix}_omniwheel_rear_sx">
+		<sensor name="${prefix}_omniwheel_rear_sx_collision_bumper" type="contact">
+			<alwaysOn>true</alwaysOn>
+			<updateRate>30.0</updateRate>
+			<contact>
+				<collision>${prefix}_omniwheel_rear_sx_collision</collision>
+			</contact>
+			<plugin name="gazebo_ros_bumper_controller" filename="libgazebo_ros_bumper.so">
+				<bumperTopicName>bumper</bumperTopicName>
+				<frameName>world</frameName>
+				<updateRate>30.0</updateRate>
+			</plugin>
+		</sensor>
+	</gazebo>	
+		
+</robot>

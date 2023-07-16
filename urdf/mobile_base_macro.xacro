@@ -1,0 +1,58 @@
+<robot name="mobile_base" xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+	
+	<xacro:property name="prefix" value="mobile_base"/>
+    	<xacro:property name="PI" value="3.1415926535897931" />
+	
+	<xacro:arg name="M" default="3.5"/>
+	<xacro:arg name="R" default="0.076"/>
+	<xacro:arg name="H" default="0.08"/>
+
+
+	<xacro:macro name="joint_mecanum" params="id x z">
+		<joint name="${prefix}_joint_${id}" type="continuous">
+			<origin xyz="${x} 0.06 ${z}" rpy="0 0 0" />
+			<parent link="${prefix}_chassis"/>
+			<child link="${prefix}_omniwheel_${id}" />
+			<axis xyz="0 0 1"/>
+			<limit effort="1" velocity="20" />
+			<joint_properties friction="0.0"/>
+		</joint>
+	</xacro:macro>
+	
+	
+	<xacro:macro name="link_mecanum" params="id mirror">
+		<link name="${prefix}_omniwheel_${id}">
+			<visual>
+				<origin xyz="0 0 0" rpy="${PI} 0 0" />
+				<geometry>
+					<xacro:if value="${mirror}">
+						<mesh filename="package://sps/urdf/mobile_base_models/omniwheel_A.stl"/>
+					</xacro:if>
+					<xacro:unless value="${mirror}">
+						<mesh filename="package://sps/urdf/mobile_base_models/omniwheel_B.stl"/>
+					</xacro:unless>
+				</geometry>
+			</visual>
+			<collision>
+				<origin xyz="0 0 0" rpy="${PI} 0 0" />
+				<geometry>
+					<cylinder length="$(arg H)" radius="$(arg R)" />
+				</geometry>
+			</collision>
+			<inertial>
+				<origin xyz="0 0 0" rpy="0 ${PI/2} 0"/>
+				<mass value="$(arg M)" />
+				<inertia ixx="${$(arg M)/12*((3*$(arg R)*$(arg R)) + ($(arg H)*$(arg H)))}" ixy="0" ixz="0"
+					   iyx="0" iyy="${$(arg M)/12*((3*$(arg R)*$(arg R)) + ($(arg H)*$(arg H)))}" iyz="0"
+					   izx="0" izy="0" izz="${$(arg M)*$(arg R)*$(arg R)/2}" />
+			</inertial>
+		</link>
+		<gazebo reference="${prefix}_omniwheel_${id}">
+			<material>Gazebo/Orange</material>
+		</gazebo>
+	</xacro:macro>
+
+
+</robot>

@@ -1,0 +1,306 @@
+<robot name="kinova" xmlns:xacro="http://ros.org/wiki/xacro">
+
+<!-- The following is an handmade document. Please refer to the official repository at https://github.com/Kinovarobotics/kinova-ros/blob/master/kinova_description/urdf/j2s6s200_standalone.xacro -->
+
+
+
+	<xacro:property name="prefix" value="kinova"/>
+    	<xacro:property name="PI" value="3.1415926535897931" />
+    	<xacro:property name="camera_link" value="0.05" /> <!-- Size of square 'camera' box -->
+
+	<xacro:macro name="inertia_cylinder" params="M H R">
+		<mass value="${M}" />
+		<inertia ixx="${ M/12*((3*R*R) + (H*H))}" ixy="0" ixz="0"
+			  iyx="0" iyy="${M/12*((3*R*R) + (H*H))}" iyz="0"
+			  izx="0" izy="0" izz="${M*R*R/2}" />
+	</xacro:macro>
+
+
+
+
+
+
+	<link name="${prefix}_base_link"></link>
+	
+	
+	<joint name="${prefix}_base_link_to_base" type="fixed">
+		<parent link="${prefix}_base_link"/>
+		<child link="${prefix}_link0" />
+		<origin rpy="0 0 0" xyz="0 0 0"/>
+	</joint>
+		
+	
+	<link name="${prefix}_link0">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://sps/urdf/kinova_models/link0.stl"/>
+			</geometry>
+			<material name="link0_material">
+				<color rgba="0.972549 0.529412 0.00392157 1"/>	
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://sps/urdf/kinova_models/link0.stl"/>
+			</geometry>
+				<material name="link0_material">
+				<color rgba="0.972549 0.529412 0.00392157 1"/>
+			</material>
+		</collision>
+		<inertial>
+       		<origin xyz="0 0 0.07825" rpy="0 0 0"/>
+			<xacro:inertia_cylinder M="0.46784" H="0.14" R="0.04"/>
+		</inertial>
+	</link>
+	<gazebo reference="${prefix}_link0">
+		<material>Gazebo/Indigo</material>
+	</gazebo>
+
+
+	<joint name="${prefix}_joint1" type="revolute">
+		<origin xyz="0 0 0.1565" rpy="0 0 0" />
+		<parent link="${prefix}_link0" />
+		<child link="${prefix}_link1" />
+		<axis xyz="0 0 1"/>
+		<limit effort="1" velocity="${36*PI/180}" torque="40" lower="${-PI}" upper="${PI}" />
+		<joint_properties friction="0"/>
+	</joint>
+
+
+	<link name="${prefix}_link1">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 -${PI/2} 0" />
+			<geometry>
+				<mesh filename="package://sps/urdf/kinova_models/link1.stl"/>
+			</geometry>
+			<material name="link1_material">
+				<color rgba="0.615686 0.811765 0.929412 1"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 -${PI/2} 0" />
+			<geometry>
+			  <mesh filename="package://sps/urdf/kinova_models/link1.stl"/>
+			</geometry>
+				<material name="link1_material">
+				<color rgba="0.615686 0.811765 0.929412 1"/>
+			</material>
+		</collision>
+		<inertial>
+      			<origin xyz="0 0.0007 0.05925" />
+			<xacro:inertia_cylinder M="0.7477" H="0.14" R="0.04"/>
+		</inertial>
+	</link>
+	<gazebo reference="${prefix}_link1">
+		<material>Gazebo/Indigo</material>
+	</gazebo>
+
+	<joint name="${prefix}_joint2" type="revolute">
+		<origin xyz="0 0.0015 0.1185" rpy="0 -${PI/2} 0" />
+		<parent link="${prefix}_link1" />
+		<child link="${prefix}_link2" />
+		<axis xyz="0 0 1"/>
+		<limit effort="1" velocity="${36*PI/180}" torque="80"  lower="${-PI}" upper="${PI}" />
+		<joint_properties friction="0.0"/>
+	</joint>
+	
+	
+	<link name="${prefix}_link2">
+		<visual>
+			<origin xyz="0 0 0" rpy="-${PI/2} -${PI/2} ${PI/2}" />
+			<geometry>
+				<mesh filename="package://sps/urdf/kinova_models/link2.stl"/>
+			</geometry>
+			<material name="link2_material">
+				<color rgba="0.498039 0.498039 0.498039 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="-${PI/2} -${PI/2} ${PI/2}" />
+			<geometry>
+				<mesh filename="package://sps/urdf/kinova_models/link2.stl"/>
+			</geometry>
+			<material name="link2_material">
+				<color rgba="0.498039 0.498039 0.498039 1.0"/>
+			</material>
+		</collision>
+		<inertial>
+ 			<origin xyz="0.205 0 0" rpy="-${PI/2} -${PI/2} ${PI/2}"/>
+			<xacro:inertia_cylinder M="0.99" H="0.35" R="0.04"/>
+		</inertial>
+	</link>
+	<gazebo reference="${prefix}_link2">
+		<material>Gazebo/Indigo</material>
+	</gazebo>
+	
+
+
+	<joint name="${prefix}_joint3" type="revolute">
+		<origin xyz="0.41 0 0" rpy="0 0 0" />
+		<parent link="${prefix}_link2" />
+		<child link="${prefix}_link3" />
+		<axis xyz="0 0 1"/>
+		<limit effort="1" velocity="${36*PI/180}" torque="40" lower="${-PI}" upper="${PI}" />
+		<joint_properties friction="0.0"/>
+	</joint>
+
+
+	<link name="${prefix}_link3">
+		<visual>
+			<origin xyz="0 0 0" rpy="${PI} ${PI/2} 0" />
+			<geometry>
+				<mesh filename="package://sps/urdf/kinova_models/link3.stl"/>
+			</geometry>
+			<material name="link3_material">
+				<color rgba="0.615686 0.811765 0.929412 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="${PI} ${PI/2} 0" />
+			<geometry>
+				<mesh filename="package://sps/urdf/kinova_models/link3.stl"/>
+			</geometry>
+			<material name="link3_material">
+				<color rgba="0.615686 0.811765 0.929412 1.0"/>
+			</material>
+		</collision>
+		<inertial>
+       		<origin xyz="0.1035 0  -0.005625" rpy="${PI} ${PI/2} 0"/>
+			<xacro:inertia_cylinder M="0.6763" H="0.15" R="0.03"/>
+		</inertial>
+	</link>
+	<gazebo reference="${prefix}_link3">
+		<material>Gazebo/Indigo</material>
+	</gazebo>
+
+
+	<joint name="${prefix}_joint4" type="revolute">
+		<origin xyz="0.207 0  -0.01125" rpy="0 ${PI/2} 0" />
+		<parent link="${prefix}_link3" />
+		<child link="${prefix}_link4" />
+		<axis xyz="0 0 1"/>
+		<limit effort="1" velocity="${48*PI/180}" torque="20" lower="${-PI}" upper="${PI}" />
+		<joint_properties friction="0.0"/>
+	</joint>
+	
+	
+	<link name="${prefix}_link4">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 -${PI/2} 0" />
+			<geometry>
+				<mesh filename="package://sps/urdf/kinova_models/link4.stl"/>
+			</geometry>
+			<material name="link4_material">
+				<color rgba="0.615686 0.811765 0.929412 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 -${PI/2} 0" />
+			<geometry>
+				<mesh filename="package://sps/urdf/kinova_models/link4.stl"/>
+			</geometry>
+			<material name="link4_material">
+				<color rgba="0.615686 0.811765 0.929412 1.0"/>
+			</material>
+		</collision>
+		<inertial>
+			<origin xyz="-0.00125 0 0.04825" rpy="0 0 0"/>
+			<xacro:inertia_cylinder M="0.463" H="0.1" R="0.02"/>
+		</inertial>
+	</link>
+	<gazebo reference="${prefix}_link4">
+		<material>Gazebo/Indigo</material>
+	</gazebo>
+
+
+	<joint name="${prefix}_joint5" type="continuous" >
+		<origin xyz="-0.0025 0 0.0965" rpy="-${PI/2} -${PI/2} 0" />
+		<parent link="${prefix}_link4" />
+		<child link="${prefix}_link5" />
+		<axis xyz="0 0 1"/>
+		<limit effort="1" velocity="${48*PI/180}" torque="20" lower="${-PI}" upper="${PI}" />
+		<joint_properties friction="0.0"/>
+	</joint>
+
+
+	<link name="${prefix}_link5">
+		<visual>
+			<origin xyz="0.0965 0 0" rpy="-${PI/2} 0 ${PI}" />
+			<geometry>
+				<mesh filename="package://sps/urdf/kinova_models/link4.stl"/>
+			</geometry>
+			<material name="link4_material">
+				<color rgba="0.615686 0.811765 0.929412 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0.0965 0 0" rpy="-${PI/2} 0 ${PI}" />
+			<geometry>
+				<mesh filename="package://sps/urdf/kinova_models/link4.stl"/>
+			</geometry>
+			<material name="link4_material">
+				<color rgba="0.615686 0.811765 0.929412 1.0"/>
+			</material>
+		</collision>
+		<inertial>
+      			<origin xyz="0.05175 0 0.000125" rpy="0 ${PI/2} 0"/>
+			<xacro:inertia_cylinder M="0.463" H="0.1" R="0.02"/>
+		</inertial>
+	</link>
+	<gazebo reference="${prefix}_link5">
+		<material>Gazebo/Indigo</material>
+	</gazebo>
+
+
+	<joint name="${prefix}_joint6" type="revolute" >
+		<origin xyz="0.101 0 0.00025" rpy="${PI/2} 0 ${PI/2}" />
+		<parent link="${prefix}_link5" />
+		<child link="${prefix}_link6" />
+		<axis xyz="0 0 1"/>
+		<limit effort="1" velocity="${48*PI/180}" torque="20" lower="${-PI}" upper="${PI}" />
+		<joint_properties friction="0.0"/>
+	</joint>
+
+
+	<link name="${prefix}_link6">
+		<visual>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://sps/urdf/kinova_models/link6.stl"/>
+			</geometry>
+			<material name="armsuppaxis001_(solid)_material">
+				<color rgba="0.8 0.8 0.8 1.0"/>
+			</material>
+		</visual>
+		<collision>
+			<origin xyz="0 0 0" rpy="0 0 0" />
+			<geometry>
+				<mesh filename="package://sps/urdf/kinova_models/link6.stl"/>
+			</geometry>
+			<material name="armsuppaxis001_(solid)_material">
+				<color rgba="0.8 0.8 0.8 1.0"/>
+			</material>
+		</collision>
+		<inertial>
+			<origin xyz="0 0 0.032347" rpy="0 0 0"/>
+			<mass value="0.059265" />
+			<inertia ixx="2.97358e-05" ixy="-5.33355e-13"  ixz="-1.85073e-09" iyy="3.04484e-05" iyz="-4.08259e-11" izz="3.72715e-05" />
+		</inertial>
+	</link>
+	<gazebo reference="${prefix}_link6">
+		<material>Gazebo/White</material>
+	</gazebo>
+
+	
+	
+	
+	<gazebo reference="${prefix}_camera_rgb_frame">
+		<material>Gazebo/Orange</material>
+	</gazebo>
+	
+	<xacro:include filename="$(find sps)/urdf/kinova_plugin.xacro" />
+
+
+</robot>
