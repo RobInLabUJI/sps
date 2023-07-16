@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import rospkg
 import rospy
 import math
 from nav_msgs.msg import Odometry
@@ -21,8 +22,9 @@ pose.orientation.z = 0
 pose.orientation.w = 1
 
 grid = []  # List to store the tuples
+rospack = rospkg.RosPack()
 
-with open('/home/ecervera/Escritorio/CERN/catkin_ws/src/sps/sdf/keys.txt', 'r') as file:
+with open(rospack.get_path('sps')+'/sdf/keys.txt', 'r') as file:
     lines = file.readlines()
     for line in lines:
         values = line.split()
@@ -41,7 +43,7 @@ def spawn_cell(cx, cy):
         pose.position.x = (cx-cell_x) * grid_size
         pose.position.y = (cy-cell_y) * grid_size
         model_name = 'sps_' + str(cx).zfill(2) + str(cy).zfill(2)
-        with open("/home/ecervera/Escritorio/CERN/catkin_ws/src/sps/sdf/"+model_name+"/model.sdf", "r") as f:
+        with open(rospack.get_path('sps')+"/sdf/"+model_name+"/model.sdf", "r") as f:
             model_xml = f.read()
         spawn_sdf_model(model_name, model_xml, "", pose, "world")
 
