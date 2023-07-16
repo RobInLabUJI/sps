@@ -89,7 +89,7 @@
 		<visual name="visual">
                  <pose>0 0 0.27 0 0 0</pose>
                  <geometry>
-                   <mesh filename="package://realsense_lidar/meshes/l515.dae"/>
+                   <cylinder length="0.062" radius="0.03" />
                  </geometry>
                </visual>
 		
@@ -114,7 +114,7 @@
 		<visual name="visual">
                  <pose>0 0 0.27 0 0 0</pose>
                  <geometry>
-                   <mesh filename="package://turtlebot_explorer/meshes/rplidar.dae" scale="0.001 0.001 0.001"/>
+                   <cylinder length="0.062" radius="0.03" />
                  </geometry>
                </visual>
 		
