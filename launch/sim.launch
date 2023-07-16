@@ -68,5 +68,9 @@
 		<remap from="/joint_states" to="/ack/joint_states" />
 	</node>
 
+    <node name="grid_monitor" pkg="sps" type="grid_monitor.py" output="screen" />
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find sps)/conf/mira.rviz" />
+
 </launch>
 
