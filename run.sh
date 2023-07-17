@@ -1,1 +1,1 @@
-rocker --nvidia --x11 sps:latest 
+rocker --name sps_sim --nvidia --x11 sps:latest 

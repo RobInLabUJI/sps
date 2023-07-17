@@ -1,7 +1,8 @@
 FROM osrf/ros:noetic-desktop-full
 
 RUN apt-get update && apt-get install -y \
-      python-is-python3 && \
+      python-is-python3 \
+      ros-noetic-teleop-twist-keyboard && \
     rm -rf /var/lib/apt/lists/*
     
 RUN mkdir -p /catkin_ws/src/sps
