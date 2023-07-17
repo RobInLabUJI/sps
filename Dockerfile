@@ -20,4 +20,9 @@ RUN cd catkin_ws \
  && source /opt/ros/noetic/setup.bash \
  && catkin_make
 
+RUN sed --in-place --expression \
+      '$isource "/catkin_ws/devel/setup.bash"' \
+      /ros_entrypoint.sh
 
+# run launch file
+CMD ["roslaunch", "sps", "sim.launch"]
