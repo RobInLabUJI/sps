@@ -1,5 +1,6 @@
 #! /usr/bin/env python
 
+# Adapted from https://github.com/nimbekarnd/Wall-follower-in-ROS-using-Python
 
 import rospy
 import numpy as np
