@@ -5,30 +5,7 @@
     <static>1</static>
     <self_collide>0</self_collide>
     <allow_auto_disable>0</allow_auto_disable>
-    <link name="Wall9167">
-      <kinematic>0</kinematic>
-      <gravity>1</gravity>
-      <self_collide>0</self_collide>
-      <collision name="collision">
-        <geometry>
-          <box>
-            <size>2.64839 0.15 2.5</size>
-          </box>
-        </geometry>
-        <pose frame="">0 0 0 0 -0 0</pose>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <box>
-            <size>2.64839 0.15 2.5</size>
-          </box>
-        </geometry>
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0.0</transparency>
-      </visual>
-      <pose frame="">48.1646 10.9283 1.25 0 -0 2.96286</pose>
-    </link>
+
     <link name="Wall9169">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
