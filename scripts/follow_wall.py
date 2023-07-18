@@ -140,6 +140,10 @@ def bug_action():
             rospy.loginfo("follow right wall is not running")
 
 
+LINEAR_VELOCITY = 1.9
+LINEAR_VELOCITY_SLOW = 0.5
+ANGULAR_VELOCITY = 0.9
+
 '''
 Function: find_wall: This function publishes linear and angular velocities for finding wall.
 '''
@@ -147,7 +151,7 @@ Function: find_wall: This function publishes linear and angular velocities for f
 
 def find_wall():
     velocity = Twist()
-    velocity.linear.x = 0.3
+    velocity.linear.x = LINEAR_VELOCITY
     velocity.angular.z = 0
     return velocity
 
@@ -160,7 +164,7 @@ Function: turn_left:  This function publishes linear and angular velocities for 
 def turn_left():
     velocity = Twist()
     velocity.linear.x = 0
-    velocity.angular.z = 0.3
+    velocity.angular.z = ANGULAR_VELOCITY
     return velocity
 
 
@@ -172,7 +176,7 @@ Function: turn_right:  This function publishes linear and angular velocities for
 def turn_right():
     velocity = Twist()
     velocity.linear.x = 0
-    velocity.angular.z = -0.3
+    velocity.angular.z = -ANGULAR_VELOCITY
     return velocity
 
 
@@ -183,7 +187,7 @@ Function: move_ahead:  This function publishes linear and angular velocities for
 
 def move_ahead():
     velocity = Twist()
-    velocity.linear.x = 0.3
+    velocity.linear.x = LINEAR_VELOCITY
     velocity.angular.z = 0
     return velocity
 
@@ -195,8 +199,8 @@ Function: move_diag_right:  This function publishes linear and angular velocitie
 
 def move_diag_right():
     velocity = Twist()
-    velocity.linear.x = 0.1
-    velocity.angular.z = -0.3
+    velocity.linear.x = LINEAR_VELOCITY_SLOW
+    velocity.angular.z = -ANGULAR_VELOCITY
     return velocity
 
 
@@ -207,8 +211,8 @@ Function: move_diag_left:  This function publishes linear and angular velocities
 
 def move_diag_left():
     velocity = Twist()
-    velocity.linear.x = 0.1
-    velocity.angular.z = 0.3
+    velocity.linear.x = LINEAR_VELOCITY_SLOW
+    velocity.angular.z = ANGULAR_VELOCITY
     return velocity
 
 
