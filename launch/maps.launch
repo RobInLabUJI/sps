@@ -1,0 +1,85 @@
+<launch>
+  <node name="accesp_map"   pkg="map_server" type="map_server" args="$(find sps)/maps/ap_500.yaml">
+    <remap from="/map" to="/access/map" />
+    <remap from="/map_metadata" to="/access/map_metadata" />
+    <remap from="/map_updates" to="/access/map_updates" />
+  </node>
+  <node name="corridor_map" pkg="map_server" type="map_server" args="$(find sps)/maps/corridor.yaml">
+    <remap from="/map" to="/corridor/map" />
+    <remap from="/map_metadata" to="/corridor/map_metadata" />
+    <remap from="/map_updates" to="/corridor/map_updates" />
+  </node>
+  <node name="dump_map" pkg="map_server" type="map_server" args="$(find sps)/maps/dump.yaml">
+    <remap from="/map" to="/dump/map" />
+    <remap from="/map_metadata" to="/dump/map_metadata" />
+    <remap from="/map_updates" to="/dump/map_updates" />
+  </node>
+  <node name="ap_top_map" pkg="map_server" type="map_server" args="$(find sps)/maps/ap_top.yaml">
+    <remap from="/map" to="/ap_top/map" />
+    <remap from="/map_metadata" to="/ap_top/map_metadata" />
+    <remap from="/map_updates" to="/ap_top/map_updates" />
+  </node>
+  <node name="corridor_top_map" pkg="map_server" type="map_server" args="$(find sps)/maps/corridor_top.yaml">
+    <remap from="/map" to="/corridor_top/map" />
+    <remap from="/map_metadata" to="/corridor_top/map_metadata" />
+    <remap from="/map_updates" to="/corridor_top/map_updates" />
+  </node>
+  <node name="corridor_top_right_map" pkg="map_server" type="map_server" args="$(find sps)/maps/corridor_top_right.yaml">
+    <remap from="/map" to="/corridor_top_right/map" />
+    <remap from="/map_metadata" to="/corridor_top_right/map_metadata" />
+    <remap from="/map_updates" to="/corridor_top_right/map_updates" />
+  </node>
+  <node name="ap_left_map" pkg="map_server" type="map_server" args="$(find sps)/maps/ap_left.yaml">
+    <remap from="/map" to="/ap_left/map" />
+    <remap from="/map_metadata" to="/ap_left/map_metadata" />
+    <remap from="/map_updates" to="/ap_left/map_updates" />
+  </node>
+  <node name="corridor_top_left_map" pkg="map_server" type="map_server" args="$(find sps)/maps/corridor_top_left.yaml">
+    <remap from="/map" to="/corridor_top_left/map" />
+    <remap from="/map_metadata" to="/corridor_top_left/map_metadata" />
+    <remap from="/map_updates" to="/corridor_top_left/map_updates" />
+  </node>
+  <node name="corridor_left_map" pkg="map_server" type="map_server" args="$(find sps)/maps/corridor_left.yaml">
+    <remap from="/map" to="/corridor_left/map" />
+    <remap from="/map_metadata" to="/corridor_left/map_metadata" />
+    <remap from="/map_updates" to="/corridor_left/map_updates" />
+  </node>
+  <node name="dump_bottom_map" pkg="map_server" type="map_server" args="$(find sps)/maps/dump_bottom.yaml">
+    <remap from="/map" to="/dump_bottom/map" />
+    <remap from="/map_metadata" to="/dump_bottom/map_metadata" />
+    <remap from="/map_updates" to="/dump_bottom/map_updates" />
+  </node>
+  <node name="corridor_bottom_right_map" pkg="map_server" type="map_server" args="$(find sps)/maps/corridor_bottom_right.yaml">
+    <remap from="/map" to="/corridor_bottom_right/map" />
+    <remap from="/map_metadata" to="/corridor_bottom_right/map_metadata" />
+    <remap from="/map_updates" to="/corridor_bottom_right/map_updates" />
+  </node>
+  <node name="BA5_map" pkg="map_server" type="map_server" args="$(find sps)/maps/BA5.yaml">
+    <remap from="/map" to="/BA5/map" />
+    <remap from="/map_metadata" to="/BA5/map_metadata" />
+    <remap from="/map_updates" to="/BA5/map_updates" />
+  </node>
+  <node name="corridor_right_map" pkg="map_server" type="map_server" args="$(find sps)/maps/corridor_right.yaml">
+    <remap from="/map" to="/corridor_right/map" />
+    <remap from="/map_metadata" to="/corridor_right/map_metadata" />
+    <remap from="/map_updates" to="/corridor_right/map_updates" />
+  </node>
+  <node name="BA4_bottom_map" pkg="map_server" type="map_server" args="$(find sps)/maps/BA4_bottom.yaml">
+    <remap from="/map" to="/BA4_bottom/map" />
+    <remap from="/map_metadata" to="/BA4_bottom/map_metadata" />
+    <remap from="/map_updates" to="/BA4_bottom/map_updates" />
+  </node>
+  <node name="BA4_map" pkg="map_server" type="map_server" args="$(find sps)/maps/BA4.yaml">
+    <remap from="/map" to="/BA4/map" />
+    <remap from="/map_metadata" to="/BA4/map_metadata" />
+    <remap from="/map_updates" to="/BA4/map_updates" />
+  </node>
+  <node name="corridor_above_BA4_map" pkg="map_server" type="map_server" args="$(find sps)/maps/corridor_above_BA4.yaml">
+    <remap from="/map" to="/corridor_above_BA4/map" />
+    <remap from="/map_metadata" to="/corridor_above_BA4/map_metadata" />
+    <remap from="/map_updates" to="/corridor_above_BA4/map_updates" />
+  </node>
+  
+  <node name="tf_world_map" pkg="tf2_ros" type="static_transform_publisher" args="-1210.065 -1273.033 0 0 0 0 1 world map" />
+
+</launch>

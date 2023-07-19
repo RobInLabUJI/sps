@@ -72,5 +72,9 @@
 
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find sps)/conf/mira.rviz" />
 
+    <node name="tf_world_odm" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0 0 0 0 1 world odom" />
+  
+    <include file="$(find sps)/launch/maps.launch" />
+    
 </launch>
 
