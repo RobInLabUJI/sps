@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+	<arg name="mira_x_pos" default="44.0"/>
+	<arg name="mira_y_pos" default="27.5"/>
+	<arg name="mira_yaw"   default="0.5643"/>
+	<arg name="gui"       default="true"/>
+	<arg name="debug"     default="false"/>
+	
+	<!-- Sim world -->
+	<env name="GAZEBO_MODEL_PATH" value="$(find sps)/sdf:$(optenv GAZEBO_MODEL_PATH)" />
+	
+	<include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<arg name="gui" value="$(arg gui)"/>
+		<arg name="debug" value="$(arg debug)"/>
+		<arg name="paused" value="true"/>
+	</include>
+
+    <!-- SPS grid -->
+	<node name="spawn_sps_2746" pkg="gazebo_ros" type="spawn_model" 
+		args="-database sps_2746 -sdf -model sps_2746 -x 0.0 -y 0.0"/>
+		
+	<node name="spawn_sps_2846" pkg="gazebo_ros" type="spawn_model" 
+		args="-database sps_2846 -sdf -model sps_2846 -x 50.0 -y 0.0"/>
+		
+	<node name="spawn_sps_2646" pkg="gazebo_ros" type="spawn_model" 
+		args="-database sps_2646 -sdf -model sps_2646 -x -50.0 -y 0.0"/>
+		
+	<node name="spawn_sps_2647" pkg="gazebo_ros" type="spawn_model" 
+		args="-database sps_2647 -sdf -model sps_2647 -x -50.0 -y 50.0"/>
+
+	<!-- Robot -->
+    <param name="robot_description" command="cat '$(find sps)/urdf/mira_no_arm.urdf'" />
+
+	<node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
+		args="-urdf -model mira -param robot_description
+		-x $(arg mira_x_pos) 
+		-y $(arg mira_y_pos)
+		-z 0.016
+		-R 0
+		-P 0
+		-Y $(arg mira_yaw)
+		" />
+
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+
+    <node name="grid_monitor" pkg="sps" type="grid_monitor.py" output="screen" />
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find sps)/conf/mira.rviz" />
+
+    <node name="tf_world_odm" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0 0 0 0 1 world odom" />
+  
+    <include file="$(find sps)/launch/maps.launch" />
+    
+</launch>
+

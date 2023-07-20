@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find sps)/conf/mira.rviz" />
+
+    <node name="tf_world_odm" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0 0 0 0 1 world odom" />
+  
+    <include file="$(find sps)/launch/maps.launch" />
+    
+    <node name="bag" pkg="rosbag" type="play" args="$(find sps)/2023-07-20-08-55-29.bag" />
+        
+</launch>
+
