@@ -5,7 +5,7 @@
     <static>1</static>
     <self_collide>0</self_collide>
     <allow_auto_disable>0</allow_auto_disable>
-    <link name="Wall248">
+    <link name="Wall32">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -29,7 +29,7 @@
       </visual>
       <pose frame="">20.5447 43.0489 1.25 0 0 -0.181001</pose>
     </link>
-    <link name="Wall629">
+    <link name="Wall129">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -53,7 +53,7 @@
       </visual>
       <pose frame="">30.8057 43.7385 1.25 0 -0 2.96219</pose>
     </link>
-    <link name="Wall954">
+    <link name="Wall199">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -77,55 +77,7 @@
       </visual>
       <pose frame="">26.9175 43.1633 1.25 0 -0 1.39171</pose>
     </link>
-    <link name="Wall962">
-      <kinematic>0</kinematic>
-      <gravity>1</gravity>
-      <self_collide>0</self_collide>
-      <collision name="collision">
-        <geometry>
-          <box>
-            <size>7.11945 0.15 2.5</size>
-          </box>
-        </geometry>
-        <pose frame="">0 0 0 0 -0 0</pose>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <box>
-            <size>7.11945 0.15 2.5</size>
-          </box>
-        </geometry>
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0.0</transparency>
-      </visual>
-      <pose frame="">30.9668 43.3025 1.25 0 0 -0.179405</pose>
-    </link>
-    <link name="Wall1640">
-      <kinematic>0</kinematic>
-      <gravity>1</gravity>
-      <self_collide>0</self_collide>
-      <collision name="collision">
-        <geometry>
-          <box>
-            <size>2.51907 0.15 2.5</size>
-          </box>
-        </geometry>
-        <pose frame="">0 0 0 0 -0 0</pose>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <box>
-            <size>2.51907 0.15 2.5</size>
-          </box>
-        </geometry>
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0.0</transparency>
-      </visual>
-      <pose frame="">27.2393 42.6984 1.25 0 0 -1.75033</pose>
-    </link>
-    <link name="Wall2347">
+    <link name="Wall544">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -148,30 +100,6 @@
         <transparency>0.0</transparency>
       </visual>
       <pose frame="">31.3415 49.7394 1.25 0 0 -0.179407</pose>
-    </link>
-    <link name="Wall2692">
-      <kinematic>0</kinematic>
-      <gravity>1</gravity>
-      <self_collide>0</self_collide>
-      <collision name="collision">
-        <geometry>
-          <box>
-            <size>12.8994 0.15 2.5</size>
-          </box>
-        </geometry>
-        <pose frame="">0 0 0 0 -0 0</pose>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <box>
-            <size>12.8994 0.15 2.5</size>
-          </box>
-        </geometry>
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0.0</transparency>
-      </visual>
-      <pose frame="">20.67 42.6198 1.25 0 -0 2.96065</pose>
     </link>
   </model>
 </sdf>

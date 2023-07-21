@@ -5,7 +5,7 @@
     <static>1</static>
     <self_collide>0</self_collide>
     <allow_auto_disable>0</allow_auto_disable>
-    <link name="Wall353">
+    <link name="Wall74">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -29,31 +29,7 @@
       </visual>
       <pose frame="">4.36764 6.45839 1.25 0 -0 1.91501</pose>
     </link>
-    <link name="Wall1087">
-      <kinematic>0</kinematic>
-      <gravity>1</gravity>
-      <self_collide>0</self_collide>
-      <collision name="collision">
-        <geometry>
-          <box>
-            <size>2.78003 0.15 2.5</size>
-          </box>
-        </geometry>
-        <pose frame="">0 0 0 0 -0 0</pose>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <box>
-            <size>2.78003 0.15 2.5</size>
-          </box>
-        </geometry>
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0.0</transparency>
-      </visual>
-      <pose frame="">1.03616 12.966 1.25 0 0 -2.79737</pose>
-    </link>
-    <link name="Wall2061">
+    <link name="Wall479">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -77,7 +53,7 @@
       </visual>
       <pose frame="">1.00643 11.8927 1.25 0 0 -2.79745</pose>
     </link>
-    <link name="Wall2063">
+    <link name="Wall480">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -100,30 +76,6 @@
         <transparency>0.0</transparency>
       </visual>
       <pose frame="">5.22485 0.126296 1.25 0 -0 0.344372</pose>
-    </link>
-    <link name="Wall2784">
-      <kinematic>0</kinematic>
-      <gravity>1</gravity>
-      <self_collide>0</self_collide>
-      <collision name="collision">
-        <geometry>
-          <box>
-            <size>14.5004 0.15 2.5</size>
-          </box>
-        </geometry>
-        <pose frame="">0 0 0 0 -0 0</pose>
-      </collision>
-      <visual name="visual">
-        <geometry>
-          <box>
-            <size>14.5004 0.15 2.5</size>
-          </box>
-        </geometry>
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <cast_shadows>1</cast_shadows>
-        <transparency>0.0</transparency>
-      </visual>
-      <pose frame="">4.79134 6.61018 1.25 0 -0 1.91502</pose>
     </link>
   </model>
 </sdf>
