@@ -5,7 +5,31 @@
     <static>1</static>
     <self_collide>0</self_collide>
     <allow_auto_disable>0</allow_auto_disable>
-    <link name="Wall313">
+    <link name="Wall381">
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>24.909 0.15 2.5</size>
+          </box>
+        </geometry>
+        <pose frame="">0 0 0 0 -0 0</pose>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>24.909 0.15 2.5</size>
+          </box>
+        </geometry>
+        <pose frame="">0 0 0 0 -0 0</pose>
+        <cast_shadows>1</cast_shadows>
+        <transparency>0.0</transparency>
+      </visual>
+      <pose frame="">39.1389 32.6733 1.25 0 0 -1.18648</pose>
+    </link>
+    <link name="Wall382">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -29,7 +53,7 @@
       </visual>
       <pose frame="">49.7497 6.43889 1.25 0 0 -1.18647</pose>
     </link>
-    <link name="Wall616">
+    <link name="Wall725">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -53,7 +77,7 @@
       </visual>
       <pose frame="">46.3548 14.8325 1.25 0 0 -1.18632</pose>
     </link>
-    <link name="Wall617">
+    <link name="Wall726">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -77,14 +101,14 @@
       </visual>
       <pose frame="">48.0525 10.6355 1.25 0 0 -1.1865</pose>
     </link>
-    <link name="Wall923">
+    <link name="Wall1112">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <collision name="collision">
         <geometry>
           <box>
-            <size>4.5264 0.15 2.5</size>
+            <size>3.48872 0.15 2.5</size>
           </box>
         </geometry>
         <pose frame="">0 0 0 0 -0 0</pose>
@@ -92,16 +116,40 @@
       <visual name="visual">
         <geometry>
           <box>
-            <size>4.5264 0.15 2.5</size>
+            <size>3.48872 0.15 2.5</size>
           </box>
         </geometry>
         <pose frame="">0 0 0 0 -0 0</pose>
         <cast_shadows>1</cast_shadows>
         <transparency>0.0</transparency>
       </visual>
-      <pose frame="">44.657 19.0292 1.25 0 0 -1.18645</pose>
+      <pose frame="">44.4625 19.5102 1.25 0 0 -1.18645</pose>
     </link>
-    <link name="Wall924">
+    <link name="Wall1113">
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>1.03768 0.15 2.5</size>
+          </box>
+        </geometry>
+        <pose frame="">0 0 0 0 -0 0</pose>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>1.03768 0.15 2.5</size>
+          </box>
+        </geometry>
+        <pose frame="">0 0 0 0 -0 0</pose>
+        <cast_shadows>1</cast_shadows>
+        <transparency>0.0</transparency>
+      </visual>
+      <pose frame="">45.3111 17.4121 1.25 0 0 -1.18645</pose>
+    </link>
+    <link name="Wall1114">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -125,7 +173,7 @@
       </visual>
       <pose frame="">47.9239 0.818282 1.25 0 0 -1.18649</pose>
     </link>
-    <link name="Wall1513">
+    <link name="Wall1731">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -149,7 +197,7 @@
       </visual>
       <pose frame="">44.5297 9.21071 1.25 0 0 -1.18647</pose>
     </link>
-    <link name="Wall2479">
+    <link name="Wall2815">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -173,7 +221,7 @@
       </visual>
       <pose frame="">42.8321 13.4075 1.25 0 0 -1.18637</pose>
     </link>
-    <link name="Wall2480">
+    <link name="Wall2816">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -197,7 +245,7 @@
       </visual>
       <pose frame="">46.2269 5.0143 1.25 0 0 -1.18647</pose>
     </link>
-    <link name="Wall3923">
+    <link name="Wall3140">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -221,7 +269,7 @@
       </visual>
       <pose frame="">48.2948 0.968093 1.25 0 -0 1.95516</pose>
     </link>
-    <link name="Wall3924">
+    <link name="Wall3141">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -245,7 +293,7 @@
       </visual>
       <pose frame="">46.5976 5.16417 1.25 0 -0 1.95511</pose>
     </link>
-    <link name="Wall3925">
+    <link name="Wall3142">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -269,7 +317,7 @@
       </visual>
       <pose frame="">44.9004 9.36067 1.25 0 -0 1.95513</pose>
     </link>
-    <link name="Wall3926">
+    <link name="Wall3143">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -293,7 +341,7 @@
       </visual>
       <pose frame="">43.2028 13.5575 1.25 0 -0 1.95522</pose>
     </link>
-    <link name="Wall3927">
+    <link name="Wall3144">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -317,7 +365,7 @@
       </visual>
       <pose frame="">41.5051 17.7543 1.25 0 -0 1.95516</pose>
     </link>
-    <link name="Wall3937">
+    <link name="Wall3154">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -341,7 +389,7 @@
       </visual>
       <pose frame="">44.2863 18.8792 1.25 0 0 -1.18641</pose>
     </link>
-    <link name="Wall3938">
+    <link name="Wall3155">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -365,7 +413,7 @@
       </visual>
       <pose frame="">45.984 14.6825 1.25 0 0 -1.18637</pose>
     </link>
-    <link name="Wall3939">
+    <link name="Wall3156">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -389,7 +437,7 @@
       </visual>
       <pose frame="">47.6816 10.4856 1.25 0 0 -1.18648</pose>
     </link>
-    <link name="Wall3940">
+    <link name="Wall3157">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -413,7 +461,7 @@
       </visual>
       <pose frame="">49.3788 6.28899 1.25 0 0 -1.18648</pose>
     </link>
-    <link name="Wall17349">
+    <link name="Wall8900">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -437,7 +485,7 @@
       </visual>
       <pose frame="">41.5051 17.7543 1.25 0 0 -1.18643</pose>
     </link>
-    <link name="Wall17350">
+    <link name="Wall8901">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -461,7 +509,7 @@
       </visual>
       <pose frame="">43.2028 13.5575 1.25 0 0 -1.18637</pose>
     </link>
-    <link name="Wall21468">
+    <link name="Wall12720">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -485,7 +533,7 @@
       </visual>
       <pose frame="">44.9004 9.36067 1.25 0 0 -1.18647</pose>
     </link>
-    <link name="Wall21469">
+    <link name="Wall12721">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -509,7 +557,7 @@
       </visual>
       <pose frame="">46.5976 5.16417 1.25 0 0 -1.18648</pose>
     </link>
-    <link name="Wall21470">
+    <link name="Wall12722">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -533,7 +581,7 @@
       </visual>
       <pose frame="">48.2948 0.968093 1.25 0 0 -1.18643</pose>
     </link>
-    <link name="Wall25297">
+    <link name="Wall16213">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -557,7 +605,7 @@
       </visual>
       <pose frame="">47.6816 10.4856 1.25 0 0 -1.18648</pose>
     </link>
-    <link name="Wall25298">
+    <link name="Wall16214">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -581,7 +629,7 @@
       </visual>
       <pose frame="">49.3788 6.28899 1.25 0 0 -1.18648</pose>
     </link>
-    <link name="Wall37063">
+    <link name="Wall27222">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -605,7 +653,7 @@
       </visual>
       <pose frame="">44.2863 18.8792 1.25 0 0 -1.18641</pose>
     </link>
-    <link name="Wall37064">
+    <link name="Wall27223">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -629,7 +677,7 @@
       </visual>
       <pose frame="">45.984 14.6825 1.25 0 0 -1.18637</pose>
     </link>
-    <link name="Wall40422">
+    <link name="Wall30209">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
