@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
-	<arg name="mira_x_pos" default="44.0"/>
+	<arg name="mira_x_pos" default="94.0"/>
 	<arg name="mira_y_pos" default="27.5"/>
 	<arg name="mira_yaw"   default="0.5643"/>
 	<arg name="gui"       default="true"/>
@@ -17,17 +17,17 @@
 	</include>
 
     <!-- SPS grid -->
-	<node name="spawn_sps_2746" pkg="gazebo_ros" type="spawn_model" 
-		args="-database sps_2746 -sdf -model sps_2746 -x 0.0 -y 0.0"/>
+	<node name="spawn_sps_1323" pkg="gazebo_ros" type="spawn_model" 
+		args="-database sps_1323 -sdf -model sps_1323 -x 0.0 -y 0.0"/>
 		
-	<node name="spawn_sps_2846" pkg="gazebo_ros" type="spawn_model" 
-		args="-database sps_2846 -sdf -model sps_2846 -x 50.0 -y 0.0"/>
+	<node name="spawn_sps_1423" pkg="gazebo_ros" type="spawn_model" 
+		args="-database sps_1423 -sdf -model sps_1423 -x 100.0 -y 0.0"/>
 		
-	<node name="spawn_sps_2646" pkg="gazebo_ros" type="spawn_model" 
-		args="-database sps_2646 -sdf -model sps_2646 -x -50.0 -y 0.0"/>
+	<node name="spawn_sps_1223" pkg="gazebo_ros" type="spawn_model" 
+		args="-database sps_1223 -sdf -model sps_1223 -x -100.0 -y 0.0"/>
 		
-	<node name="spawn_sps_2647" pkg="gazebo_ros" type="spawn_model" 
-		args="-database sps_2647 -sdf -model sps_2647 -x -50.0 -y 50.0"/>
+	<node name="spawn_sps_1224" pkg="gazebo_ros" type="spawn_model" 
+		args="-database sps_1224 -sdf -model sps_1224 -x -100.0 -y 100.0"/>
 
 	<!-- Robot -->
     <param name="robot_description" command="cat '$(find sps)/urdf/mira.urdf'" />
@@ -72,8 +72,7 @@
 
     <node name="rviz" pkg="rviz" type="rviz" args="-d $(find sps)/conf/mira.rviz" />
 
-    <node name="tf_world_odm" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0 0 0 0 1 world odom" />
-  
+    <node name="tf_world_odm" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0 0 0 0 1 world odom" /> 
     <include file="$(find sps)/launch/maps.launch" />
     
 </launch>

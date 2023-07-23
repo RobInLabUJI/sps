@@ -6,9 +6,9 @@ from nav_msgs.msg import Odometry
 from gazebo_msgs.srv import SpawnModel, DeleteModel
 from geometry_msgs.msg import Pose
 
-cell_x = 27
-cell_y = 46
-grid_size = 50.0
+cell_x = 13
+cell_y = 23
+grid_size = 100.0
 
 previous_cell = None
 

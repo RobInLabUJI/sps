@@ -5,14 +5,14 @@
     <static>1</static>
     <self_collide>0</self_collide>
     <allow_auto_disable>0</allow_auto_disable>
-    <link name="Wall89">
+    <link name="Wall6589">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <collision name="collision">
         <geometry>
           <box>
-            <size>26.7984 0.15 2.5</size>
+            <size>45.9415 0.15 2.5</size>
           </box>
         </geometry>
         <pose frame="">0 0 0 0 -0 0</pose>
@@ -20,23 +20,23 @@
       <visual name="visual">
         <geometry>
           <box>
-            <size>26.7984 0.15 2.5</size>
+            <size>45.9415 0.15 2.5</size>
           </box>
         </geometry>
         <pose frame="">0 0 0 0 -0 0</pose>
         <cast_shadows>1</cast_shadows>
         <transparency>0.0</transparency>
       </visual>
-      <pose frame="">13.3971 4.94569 1.25 0 -0 1.83122</pose>
+      <pose frame="">33.9774 8.61281 1.25 0 -0 2.90503</pose>
     </link>
-    <link name="Wall90">
+    <link name="Wall9342">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <collision name="collision">
         <geometry>
           <box>
-            <size>51.7448 0.15 2.5</size>
+            <size>45.8818 0.15 2.5</size>
           </box>
         </geometry>
         <pose frame="">0 0 0 0 -0 0</pose>
@@ -44,23 +44,23 @@
       <visual name="visual">
         <geometry>
           <box>
-            <size>51.7448 0.15 2.5</size>
+            <size>45.8818 0.15 2.5</size>
           </box>
         </geometry>
         <pose frame="">0 0 0 0 -0 0</pose>
         <cast_shadows>1</cast_shadows>
         <transparency>0.0</transparency>
       </visual>
-      <pose frame="">3.28492 42.8931 1.25 0 -0 1.83122</pose>
+      <pose frame="">79.6707 2.41948 1.25 0 -0 2.9176</pose>
     </link>
-    <link name="Wall495">
+    <link name="Wall9343">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <collision name="collision">
         <geometry>
           <box>
-            <size>27.9987 0.15 2.5</size>
+            <size>45.8819 0.15 2.5</size>
           </box>
         </geometry>
         <pose frame="">0 0 0 0 -0 0</pose>
@@ -68,14 +68,14 @@
       <visual name="visual">
         <geometry>
           <box>
-            <size>27.9987 0.15 2.5</size>
+            <size>45.8819 0.15 2.5</size>
           </box>
         </geometry>
         <pose frame="">0 0 0 0 -0 0</pose>
         <cast_shadows>1</cast_shadows>
         <transparency>0.0</transparency>
       </visual>
-      <pose frame="">8.89472 4.3658 1.25 0 -0 1.83122</pose>
+      <pose frame="">35.0009 12.8919 1.25 0 -0 2.90502</pose>
     </link>
   </model>
 </sdf>
