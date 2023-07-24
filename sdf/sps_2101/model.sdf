@@ -1,18 +1,18 @@
 <?xml version="1.0" ?>
 <sdf version="1.6">
-  <model name="sps_2316">
+  <model name="sps_2101">
     <pose frame="">0 0 0 0 -0 0</pose>
     <static>1</static>
     <self_collide>0</self_collide>
     <allow_auto_disable>0</allow_auto_disable>
-    <link name="Wall2690">
+    <link name="Wall2684">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
       <collision name="collision">
         <geometry>
           <box>
-            <size>21.4001 0.15 2.5</size>
+            <size>28.3501 0.15 2.5</size>
           </box>
         </geometry>
         <pose frame="">0 0 0 0 -0 0</pose>
@@ -20,14 +20,14 @@
       <visual name="visual">
         <geometry>
           <box>
-            <size>21.4001 0.15 2.5</size>
+            <size>28.3501 0.15 2.5</size>
           </box>
         </geometry>
         <pose frame="">0 0 0 0 -0 0</pose>
         <cast_shadows>1</cast_shadows>
         <transparency>0.0</transparency>
       </visual>
-      <pose frame="">0.217552 27.5316 1.25 0 0 -1.22655</pose>
+      <pose frame="">1.99056 7.14009 1.25 0 0 -0.814141</pose>
     </link>
   </model>
 </sdf>

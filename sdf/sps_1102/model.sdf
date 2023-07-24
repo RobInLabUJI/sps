@@ -5,7 +5,7 @@
     <static>1</static>
     <self_collide>0</self_collide>
     <allow_auto_disable>0</allow_auto_disable>
-    <link name="Wall1562">
+    <link name="Wall1583">
       <kinematic>0</kinematic>
       <gravity>1</gravity>
       <self_collide>0</self_collide>
@@ -28,6 +28,30 @@
         <transparency>0.0</transparency>
       </visual>
       <pose frame="">93.6293 88.542 1.25 0 0 -0.214252</pose>
+    </link>
+    <link name="Wall1585">
+      <kinematic>0</kinematic>
+      <gravity>1</gravity>
+      <self_collide>0</self_collide>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>301.606 0.15 2.5</size>
+          </box>
+        </geometry>
+        <pose frame="">0 0 0 0 -0 0</pose>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>301.606 0.15 2.5</size>
+          </box>
+        </geometry>
+        <pose frame="">0 0 0 0 -0 0</pose>
+        <cast_shadows>1</cast_shadows>
+        <transparency>0.0</transparency>
+      </visual>
+      <pose frame="">92.5528 82.6767 1.25 0 -0 2.92734</pose>
     </link>
   </model>
 </sdf>
