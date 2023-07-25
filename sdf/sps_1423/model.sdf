@@ -462,23 +462,6 @@
       <pose frame="">96.4616 22.7581 1.25 0 -0 2.95882</pose>
     </link>
     
-    <model name='gate_1'>
-		<static>1</static>
-		<pose frame=''>3 36 0 0 0 0</pose>
-			<link name='link'>
-				<collision name='collision'>
-					<geometry>
-						 <mesh><uri>model://gate/gate.dae</uri></mesh>
-					</geometry>
-				</collision>
-				<visual name='visual'>
-					<geometry>
-						 <mesh><uri>model://gate/gate.dae</uri></mesh>
-					</geometry>
-				</visual>
-			</link>
-	</model>
-    
     <link name="Cylinder11404">
       <kinematic>0</kinematic>
       <gravity>1</gravity>

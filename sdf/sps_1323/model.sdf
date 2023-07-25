@@ -3269,5 +3269,23 @@
       </visual>
       <pose frame="">85.4719 17.758 1.25 0 -0 0.926645</pose>
     </link>
+    
+    <model name='gate_1'>
+		<static>1</static>
+		<pose frame=''>96 39 0 0 0 1.3914</pose>
+			<link name='link'>
+				<collision name='collision'>
+					<geometry>
+						 <mesh><uri>model://gate/gate.dae</uri></mesh>
+					</geometry>
+				</collision>
+				<visual name='visual'>
+					<geometry>
+						 <mesh><uri>model://gate/gate.dae</uri></mesh>
+					</geometry>
+				</visual>
+			</link>
+	</model>  
+    
   </model>
 </sdf>
